@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit{
       console.log("đăng nhập thành công");
       }else
       {
-        console.log("đăng nhập thất bại");
+        this.router.navigate(['/'+'admin']);
       }
     });
     
