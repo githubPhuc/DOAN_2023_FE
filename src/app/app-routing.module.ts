@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'Login',component: LoginComponent,},
+ 
   {
     path: '',
     component: LayoutComponent,
@@ -14,9 +15,13 @@ const routes: Routes = [
         redirectTo: '/admin',
         pathMatch: 'full'
       },
+      {
+        path: 'admin', loadChildren: () => import('./dash/dash.module').then(m => m.DashModule)
+      }
       
     ]
   },
+  
 ];
 
 @NgModule({

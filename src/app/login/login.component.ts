@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit{
         return;
     }
     this.data.password=form.value.password;
-    console.log(this.data);
     this.httpService.login(this.data).subscribe(data1=>{
       
       if(data1.status==400)
@@ -45,12 +44,14 @@ export class LoginComponent implements OnInit{
       window.localStorage.setItem('username',data1.username);
       window.localStorage.setItem('address',data1.address);
       window.localStorage.setItem('name',data1.name);
-      if(data1.role=='Admin')
-      {
-      console.log("đăng nhập thành công");
-      }else
+      if(data1.role =='Admin')
       {
         this.router.navigate(['/'+'admin']);
+      }else
+      {
+
+        console.log("User not admin");
+        
       }
     });
     

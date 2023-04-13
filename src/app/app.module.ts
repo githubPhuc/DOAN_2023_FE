@@ -14,7 +14,6 @@ import { LayoutComponent } from './dashboard/layout/layout.component';
     AppComponent,
     LoginComponent,
     LayoutComponent
-   
   ],
   imports: [
     BrowserModule,
